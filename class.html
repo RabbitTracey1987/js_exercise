@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		var obj={};
+		console.log(obj.toString());
+
+		// define a function to return the class of an object
+    function classof(obj){
+		if(obj===null){
+			return 'Null';
+
+		}
+		if(obj===undefined){
+			return 'undefined';
+		}
+		return Object.prototype.toString.call(obj).slice(8,-1);
+	}
+	var x=null;
+	console.log(classof(x));
+	var y=undefined;
+	console.log(classof(y));
+	var z=123;
+	console.log(classof(z));
+	</script>
+
+</body>
+</html>

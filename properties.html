@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		var person={};
+		Object.defineProperties(person,{
+			'username':{
+				value:'tracey',
+				writable:true,
+				enumerable:true,
+				configurable:true
+			},
+			age:{
+				value:12,
+				writable:false
+			}
+
+		})
+		console.log(person.username);
+		console.log(person['age']);
+		console.log(Object.getOwnPropertyDescriptor(person,'username'));
+		person.addr='haerbin';
+		console.log(Object.getOwnPropertyDescriptor(person,'addr'));
+	</script>
+
+</body>
+</html>

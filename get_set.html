@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		var person={
+			username:'king',
+			sex:'male',
+			get age(){
+				return 31;
+			},
+			set age(val){
+				console.log('you can not set the age '+val);
+			}
+		};
+		console.log(person.username);
+		console.log(person.age);
+		person.age=19;
+
+		var obj={
+			x:1,
+			y:2,
+			z:3,
+			get sum(){
+				return this.x+this.y+this.z;
+			},
+			set time(value){
+				this.x*=value;
+				this.y*=value;
+				this.z*=value;
+			}
+
+		}
+		console.log(obj.sum);
+		obj.time=3;
+		console.log(obj.sum);
+	</script>
+
+</body>
+</html>
