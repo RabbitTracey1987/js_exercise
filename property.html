@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		var obj={};
+		obj.x=1;
+		obj.y=2;
+		obj.x=123;
+		// console.log(obj.x+obj.y);
+		// for(var p in obj){
+		// 	console.log(p);
+		// }
+		// console.log(Object.keys(obj));
+		// console.log(Object.getOwnPropertyNames(obj));
+
+		// this is how to use Object.defineProperty
+		Object.defineProperty(obj,'x',{
+			value:12
+		});
+		console.log(obj.x);
+		for(p in obj){
+			console.log(p)
+		}
+		Object.defineProperty(obj,'y',{
+			value:56,
+			writable:true, //default is false
+			enumerable:true,
+			configurable:true
+		})
+		console.log(obj.y);
+		obj.y=777;
+		console.log(obj.y);
+		for(p in obj){
+			console.log(p);
+		}
+		console.log(Object.keys(obj));
+		console.log(Object.getOwnPropertyNames(obj));
+		Object.defineProperty(obj,'k',{
+			value:1,
+			writable:false,
+			enumerable:false,
+			configurable:true
+		})
+		console.log(obj.k);
+		obj.k=3;
+		console.log(obj.k);
+		Object.defineProperty(obj,'k',{
+			writable:true
+		})
+		obj.k=5;
+		console.log(obj.k);
+	</script>
+
+</body>
+</html>
